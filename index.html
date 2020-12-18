@@ -1,0 +1,63 @@
+<html>
+	<head>
+		
+		<title>3D Menu</title>
+		<link href = "style.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	
+	<body>
+		<div class = "scene">
+			<div class = "cube">
+				<div class = "face front"></div>
+				<div class = "shadowmaintext">
+					<h1 class = "">This is some text</h1>
+				</div>
+				<div class = "maintext">
+					<h1>This is some text</h1>
+				</div>
+				<div class = "face back"></div>
+				<div class = "face left"></div>
+				<div class = "face right"></div>
+				<div class = "face bottom"></div>
+				<div class = "face top"></div>
+				<div class = "shadowmenu">
+					<h1>Menu Item</h1>
+					<h1>Menu Item</h1>
+					<h1>Menu Item</h1>
+					<h1>Menu Item</h1>
+				</div>
+				<div class = "menu">
+					<h1>Menu Item</h1>
+					<h1>Menu Item</h1>
+					<h1>Menu Item</h1>
+					<h1>Menu Item</h1>
+				</div>
+			</div>
+		</div>
+		<div id = "menubutton">&middot;&middot;&middot;</div>
+		
+		<script>
+			
+			document.body.style.display = "inline-block";
+			document.body.style.transition = "1s";
+			setTimeout( function() { document.body.style.opacity = "1" }, 10);
+			var open = false;
+			document.getElementById("menubutton").onclick = function()
+			{
+				open = !open;
+				document.getElementsByClassName("cube")[0].classList.toggle( "open");
+				if( open )
+				{
+					document.getElementById( "menubutton").style.left = "calc( 100vw - 2em )";
+				}
+				else
+				{
+					document.getElementById( "menubutton").style.left = " 1em ";
+				}
+			}
+		
+		</script>
+	</body>
+	
+</html>
