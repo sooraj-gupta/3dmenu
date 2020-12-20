@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+*
+{
+  font-family: 'Rubik';
+}
+body,html
+{
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper
+{
+  opacity: 0;
+}
+
+#hinge
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hscene
+{
+  font-size: 20px;
+  min-width: 200px;
+  height: 2em;
+  margin: 75px 30px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.hfig
+{
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+  transform: translateZ(0px);
+  transform-style: preserve-3d;
+}
+
+button
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  padding: 0px 20px;
+  height: 100%;
+  background-color: #cc9999;
+  border: 0px solid white;
+  border-radius: 2px;
+  font-size: 20px;
+  text-transform:uppercase;
+  font-weight: 400;
+  color: white;
+  outline: none;
+  transition: 0.5s;
+  white-space: nowrap;
+}
+
+button:hover
+{
+  cursor: pointer;
+}
+
+.front
+{
+  transform: rotateX( 0deg ) translateZ(25px);
+  min-width: 200px;
+}
+
+.top
+{
+  transform: rotateX(-170deg) translateZ(24px) translateY(0px);
+  transition-timing-function:cubic-bezier(.23,.98,.47,1.2);
+  height: 100%;
+  background-color: #eebbbb;
+}
+
+
+
+.hfig:hover a > .top, .hfig:hover > .top
+{
+  //transform: rotateX(0deg) translateZ(25px) translateY(calc( 2em + 1px ));
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>cube</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id = "hinge">
+        <div class = "hscene">
+          <div class = "hfig" >
+            <button class = "front">1</button>
+            <button class = "top">Message</button>
+          </div>
+        </div>
+        <div class = "hscene">
+          <div class = "hfig" >
+            <a href = "#">
+              <button class = "front">Click Here</button>
+              <button class = "top">Now</button>
+            <a>
+          </div>
+        </div>
+        <div class = "hscene" onmouseover="drop(this)" onmouseout="up(this)">
+          <div class = "hfig" >
+            <button class = "front">Click Here</button>
+            <button class = "top">Now</button>
+            <button class = "top">Now2</button>
+            <button class = "top">Now3</button>
+            <button class = "top">Now4</button>
+            <button class = "top">Now5</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      document.getElementsByClassName( "wrapper" )[0].style.transition = "0.5s";
+      setTimeout( () => {
+        document.getElementsByClassName( "wrapper" )[0].style.opacity = "1";
+      }, 10 )
+      function drop(el)
+      {
+        var drops = el.getElementsByClassName("top");
+        for( let i = 0; i < drops.length; i++ )
+        {
+          drops[i].style.transform = `rotateX(0deg) translateZ(25px) translateY(calc( ${2*(i+1)}em  ))`;
+        }
+      }
+
+    </script>
+  </body>
+</html>
